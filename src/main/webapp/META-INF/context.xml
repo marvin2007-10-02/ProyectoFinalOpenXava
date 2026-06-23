@@ -17,13 +17,13 @@
 	driver to the pom.xml of your project.
 	-->
 	 
-	<!-- HSQLDB -->   	
+	<!-- HSQLDB
     <Resource name="jdbc/bfavocabularioDS" auth="Container" type="javax.sql.DataSource"
 	      maxTotal="20" maxIdle="5" maxWaitMillis="10000"
 	      username="sa" password="" 
 	      driverClassName="org.hsqldb.jdbc.JDBCDriver"
 	      url="jdbc:hsqldb:hsql://localhost:1666"/>
-	      
+	   -->
 	<!-- MySQL       
     <Resource name="jdbc/bfavocabularioDS" auth="Container" type="javax.sql.DataSource"
 	      maxTotal="20" maxIdle="5" maxWaitMillis="10000"
@@ -32,15 +32,15 @@
 	      url="jdbc:mysql://localhost:3306/bfavocabulariodb"/>	      
 	-->      
 	
-	<!-- PostgreSQL 
+	 PostgreSQL
 	<Resource name="jdbc/bfavocabularioDS" auth="Container" type="javax.sql.DataSource"
 	      maxTotal="20" maxIdle="5" maxWaitMillis="10000"
-	      username="postgres" password=""
+	      username="postgres" password="admin"
 	      driverClassName="org.postgresql.Driver" 
 	      url="jdbc:postgresql://localhost/bfavocabulariodb"/>
-	-->
+
 	
-	<!-- Oracle 
+	<!-- Oracle
 	<Resource name="jdbc/bfavocabularioDS" auth="Container" type="javax.sql.DataSource"
 	      maxTotal="20" maxIdle="5" maxWaitMillis="10000"
 	      username="user" password=""
