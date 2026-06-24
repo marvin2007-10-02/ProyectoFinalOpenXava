@@ -2,7 +2,8 @@ package ni.edu.uam.bfavocabulario.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.openxava.model.Identifiable;
+import org.openxava.annotations.ReadOnly;
+import org.openxava.annotations.Required;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,23 +12,37 @@ import java.util.List;
 @Table(name = "TestVocabularioA")
 @Getter
 @Setter
-public class TestVocabularioA extends Identifiable {
+public class TestVocabularioA {
 
-    @Column(length = 50, nullable = false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ReadOnly
+    @Required
+    @Column(nullable = false, length = 50)
     private String area = "Vocabulario";
 
-    @Column(length = 10, nullable = false, unique = true)
+    @ReadOnly
+    @Required
+    @Column(nullable = false, unique = true, length = 10)
     private String codigo = "VOC1";
 
-    @Column(length = 100, nullable = false)
+    @Required
+    @Column(nullable = false, length = 100)
     private String nombre = "Test de Vocabulario Forma A";
 
+    @Required
     @Column(nullable = false)
-    private Integer tiempoLimite = 30;
+    private Integer tiempoLimite = 5;
 
-    @Column(length = 50, nullable = false)
+    @ReadOnly
+    @Required
+    @Column(nullable = false, length = 50)
     private String tipoTest = "Selección múltiple";
 
+    @ReadOnly
+    @Required
     @Column(nullable = false)
     private Integer totalPreguntas = 37;
 
