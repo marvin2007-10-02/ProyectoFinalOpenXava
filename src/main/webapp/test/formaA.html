@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Vocabulario Forma A</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/formaA.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <header class="test-header">
+            <div>
+                <p class="eyebrow">Vocabulario Forma A</p>
+                <h1 id="nombreEvaluado">Evaluado</h1>
+            </div>
+            <div class="status-strip">
+                <div>
+                    <span class="status-label">Tiempo</span>
+                    <strong id="timer">05:00</strong>
+                </div>
+                <div>
+                    <span class="status-label">Respondidas</span>
+                    <strong id="progress">0/0</strong>
+                </div>
+            </div>
+        </header>
+
+        <section id="messageBox" class="message-box hidden" role="alert"></section>
+        <section id="questions" class="question-list" aria-live="polite"></section>
+
+        <div class="bottom-bar">
+            <button id="finishBtn" class="button button-primary" type="button" disabled>Finalizar test</button>
+        </div>
+    </main>
+</body>
+</html>

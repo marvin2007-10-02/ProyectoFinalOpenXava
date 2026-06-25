@@ -6,6 +6,7 @@ import lombok.Setter;
 import ni.edu.uam.bfavocabulario.enums.EstadoSesion;
 import org.openxava.annotations.Hidden;
 import org.openxava.annotations.Required;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -28,6 +29,33 @@ public class SesionEvaluacion {
 
     @Required
     private String nombreEvaluado;
+
+    @Required
+    @Column(length = 100)
+    String nombreCompleto;
+
+    @Required
+    Integer edad;
+
+    @Required
+    @Column(length = 25)
+    String cedula;
+
+    @Required
+    @Column(length = 25)
+    String telefono;
+
+    @Required
+    @Column(length = 20)
+    String sexo;
+
+    @Required
+    @Column(length = 100)
+    String colegioProcedencia;
+
+    @Required
+    @Column(length = 100)
+    String procedencia;
 
     private LocalDateTime fechaInicio = LocalDateTime.now();
 
