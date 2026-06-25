@@ -15,9 +15,18 @@
     </init-param>
     <load-on-startup>3</load-on-startup>
   </servlet>
+  <servlet>
+    <servlet-name>bfaApiServlet</servlet-name>
+    <servlet-class>ni.edu.uam.bfavocabulario.api.BfaApiServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
   <servlet-mapping>
     <servlet-name>jsp</servlet-name>
     <url-pattern>*.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>bfaApiServlet</servlet-name>
+    <url-pattern>/api/*</url-pattern>
   </servlet-mapping>
   
   <!-- To be compliant with OWASP -->

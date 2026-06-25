@@ -6,6 +6,7 @@ import org.openxava.jpa.XPersistence;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.Locale;
 
 public class InterpretacionService implements IInterpretacion {
 
@@ -20,12 +21,14 @@ public class InterpretacionService implements IInterpretacion {
             return 0;
         }
 
+        String subtestNormalizado = subtest.trim().toUpperCase(Locale.ROOT);
+
         TypedQuery<NormaNacionalBFA> query = XPersistence.getManager().createQuery(
-                "select n from NormaNacionalBFA n where n.subtest = :subtest and " +
+                "select n from NormaNacionalBFA n where upper(trim(n.subtest)) = :subtest and " +
                         ":puntajeDirecto between n.puntajeMinimo and n.puntajeMaximo",
                 NormaNacionalBFA.class
         );
-        query.setParameter("subtest", subtest);
+        query.setParameter("subtest", subtestNormalizado);
         query.setParameter("puntajeDirecto", puntajeDirecto);
 
         List<NormaNacionalBFA> normas = query.getResultList();

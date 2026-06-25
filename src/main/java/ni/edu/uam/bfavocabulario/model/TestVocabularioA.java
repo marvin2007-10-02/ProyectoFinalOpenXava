@@ -23,7 +23,7 @@ public class TestVocabularioA extends Identifiable {
     private String nombre = "Test de Vocabulario Forma A";
 
     @Column(nullable = false)
-    private Integer tiempoLimite = 30;
+    private Integer tiempoLimite = 5;
 
     @Column(length = 50, nullable = false)
     private String tipoTest = "Selección múltiple";

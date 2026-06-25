@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - Vocabulario Forma A</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/resultado.js" defer></script>
+</head>
+<body>
+    <main class="page page-centered">
+        <section class="panel panel-narrow">
+            <p class="eyebrow">Resultado</p>
+            <h1 id="resultadoNombre">Vocabulario Forma A</h1>
+
+            <div id="resultadoPanel" class="result-grid">
+                <div class="result-item">
+                    <span>Puntaje directo</span>
+                    <strong id="puntajeDirecto">0</strong>
+                </div>
+                <div class="result-item">
+                    <span>Percentil</span>
+                    <strong id="percentil">0</strong>
+                </div>
+                <div class="result-item result-wide">
+                    <span>Estado</span>
+                    <strong id="estado">FINALIZADA</strong>
+                </div>
+            </div>
+
+            <p class="result-note">Nota: El percentil representa la posicion del evaluado segun las normas BFA, no el porcentaje de respuestas correctas.</p>
+            <p id="mensaje" class="message" role="alert"></p>
+            <div class="action-row">
+                <a class="button button-secondary" href="../">Ir a administrador</a>
+                <a class="button button-primary" href="registro.html">Nueva evaluacion</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

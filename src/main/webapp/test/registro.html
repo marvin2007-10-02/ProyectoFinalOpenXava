@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Vocabulario Forma A</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/registro.js" defer></script>
+</head>
+<body>
+    <main class="page page-centered">
+        <section class="panel panel-narrow">
+            <p class="eyebrow">BFA</p>
+            <h1>Vocabulario Forma A</h1>
+            <p class="lead">Ingrese los datos del evaluado para continuar.</p>
+
+            <form id="registroForm" class="form">
+                <label for="nombreCompleto">Nombre completo</label>
+                <input id="nombreCompleto" name="nombreCompleto" type="text" maxlength="100" autocomplete="name" required autofocus>
+
+                <label for="edad">Edad</label>
+                <input id="edad" name="edad" type="number" min="1" step="1" required>
+
+                <label for="cedula">Cedula</label>
+                <input id="cedula" name="cedula" type="text" maxlength="25" required>
+
+                <label for="telefono">Telefono</label>
+                <input id="telefono" name="telefono" type="tel" maxlength="25" required>
+
+                <label for="sexo">Sexo</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="">Seleccione una opcion</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro/Prefiere no decir">Otro/Prefiere no decir</option>
+                </select>
+
+                <label for="colegioProcedencia">Colegio de procedencia</label>
+                <input id="colegioProcedencia" name="colegioProcedencia" type="text" maxlength="100" required>
+
+                <label for="procedencia">Procedencia</label>
+                <input id="procedencia" name="procedencia" type="text" maxlength="100" required>
+
+                <div class="action-row">
+                    <a class="button button-secondary" href="../">Ir a administrador</a>
+                    <button id="continuarBtn" class="button button-primary" type="submit">Continuar</button>
+                </div>
+                <p id="mensaje" class="message" role="alert"></p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
