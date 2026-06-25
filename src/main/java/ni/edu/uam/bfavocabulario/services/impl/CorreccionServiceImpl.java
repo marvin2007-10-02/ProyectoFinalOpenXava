@@ -8,6 +8,7 @@ public class CorreccionServiceImpl implements CorreccionService {
 
     @Override
     public int calcularAciertos(SesionEvaluacion sesionEvaluacion) {
+
         if (sesionEvaluacion == null || sesionEvaluacion.getOpcionesSeleccionadas() == null) {
             return 0;
         }
@@ -15,7 +16,7 @@ public class CorreccionServiceImpl implements CorreccionService {
         int aciertos = 0;
 
         for (Opcion opcion : sesionEvaluacion.getOpcionesSeleccionadas()) {
-            if (opcion != null && opcion.isEsCorrecta()) {
+            if (opcionEsCorrecta(opcion)) {
                 aciertos++;
             }
         }
@@ -25,14 +26,23 @@ public class CorreccionServiceImpl implements CorreccionService {
 
     @Override
     public int corregirSesion(SesionEvaluacion sesionEvaluacion) {
-        if (sesionEvaluacion == null) {
-            return 0;
-        }
 
         int aciertos = calcularAciertos(sesionEvaluacion);
 
-        sesionEvaluacion.setPuntajeDirecto(aciertos);
+        if (sesionEvaluacion != null) {
+            sesionEvaluacion.setPuntajeDirecto(aciertos);
+        }
 
         return aciertos;
+    }
+
+    @Override
+    public boolean opcionEsCorrecta(Opcion opcion) {
+
+        if (opcion == null) {
+            return false;
+        }
+
+        return opcion.verificarCorrecta();
     }
 }
